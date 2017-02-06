@@ -1,29 +1,18 @@
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 
 public class RegistrationGUI {
-
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegistrationGUI window = new RegistrationGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		
 	}
 
 	/**
 	 * Create the application.
+	 * @wbp.parser.entryPoint
 	 */
 	public RegistrationGUI() {
 		initialize();
