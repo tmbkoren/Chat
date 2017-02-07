@@ -55,17 +55,6 @@ public class LoginGUI {
 		btnLogin.setBounds(126, 180, 89, 23);
 		frame.getContentPane().add(btnLogin);
 		
-		JButton btnRegister = new JButton("Register");
-		btnRegister.setBounds(218, 180, 89, 23);
-		frame.getContentPane().add(btnRegister);
-		btnRegister.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					RegistrationGUI registrationWindow = new RegistrationGUI();
-					registrationWindow.frame.setVisible(true);
-					window.frame.setVisible(false);
-				}
-		});
-		
 		JLabel lblLogin = new JLabel("Nickname");
 		lblLogin.setBounds(148, 87, 46, 14);
 		frame.getContentPane().add(lblLogin);
