@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 public class ChatGUI {
 
 	private JFrame frame;
+	String nick;
 
 	/**
 	 * Launch the application.
@@ -14,8 +15,9 @@ public class ChatGUI {
 	/**
 	 * Create the application.
 	 */
-	public ChatGUI() {
+	public ChatGUI(String nickname) {
 		initialize();
+		nick = nickname;
 	}
 
 	/**

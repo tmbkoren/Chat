@@ -69,6 +69,8 @@ public class StartGUI {
 		btnConnect.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				Client client = new Client(ipTextField.getText(), Integer.parseInt(portTextField.getText()));
+				LoginGUI loginGUIwindow = new LoginGUI(client);
+				loginGUIwindow.frame.setVisible(true);
 			}
 		});
 	}

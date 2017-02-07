@@ -1,4 +1,3 @@
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,8 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 
 public class LoginGUI {
-	static LoginGUI window;
-	private JFrame frame;
+	Client user;
+	static LoginGUI login_window;
+	JFrame frame;
 	private JTextField textField;
 	private JPasswordField passwordField;
 
@@ -18,23 +18,15 @@ public class LoginGUI {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					window = new LoginGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		
 	}
 
 	/**
 	 * Create the application.
 	 */
-	public LoginGUI() {
+	public LoginGUI(Client client) {
 		initialize();
+		user = client;
 	}
 
 	/**
