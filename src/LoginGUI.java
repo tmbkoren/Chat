@@ -12,7 +12,6 @@ public class LoginGUI {
 	static LoginGUI login_window;
 	JFrame frame;
 	private JTextField textField;
-	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -24,13 +23,13 @@ public class LoginGUI {
 	/**
 	 * Create the application.
 	 */
-	public LoginGUI(Client client) {
+	public LoginGUI() {
 		initialize();
-		user = client;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @wbp.parser.entryPoint
 	 */
 	private void initialize() {
 		frame = new JFrame();
@@ -39,24 +38,16 @@ public class LoginGUI {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(218, 84, 86, 20);
+		textField.setBounds(233, 114, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(126, 180, 89, 23);
+		btnLogin.setBounds(161, 182, 89, 23);
 		frame.getContentPane().add(btnLogin);
 		
 		JLabel lblLogin = new JLabel("Nickname");
-		lblLogin.setBounds(148, 87, 46, 14);
+		lblLogin.setBounds(112, 117, 46, 14);
 		frame.getContentPane().add(lblLogin);
-		
-		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(148, 134, 46, 14);
-		frame.getContentPane().add(lblPassword);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(218, 131, 86, 20);
-		frame.getContentPane().add(passwordField);
 	}
 }
