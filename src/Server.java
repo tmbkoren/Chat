@@ -13,6 +13,7 @@ public class Server {
 		try {
 			port = Integer.parseInt(reader.readLine());
 			servSocket = new ServerSocket(port);
+			System.out.println("Your port - " + port);
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,6 +26,7 @@ public class Server {
 			while(client == null){
 				try{
 					client = servSocket.accept();
+					System.out.println("Got a client");
 				}
 				catch(Exception e){
 					e.printStackTrace();
@@ -32,6 +34,8 @@ public class Server {
 			}
 			new ClientThread(client);
 		}
+
+
 
 	}
 

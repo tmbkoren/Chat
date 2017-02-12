@@ -1,6 +1,8 @@
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.UnknownHostException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -68,8 +70,20 @@ public class StartGUI {
 		frame.getContentPane().add(btnConnect);
 		btnConnect.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				LoginGUI loginGUIwindow = new LoginGUI();
-				loginGUIwindow.frame.setVisible(true);
+				try {
+					new Client(ipTextField.getText(), Integer.parseInt(portTextField.getText()));
+					frame.setVisible(false);
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (UnknownHostException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
 			}
 		});
 	}
