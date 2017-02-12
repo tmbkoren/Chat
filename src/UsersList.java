@@ -28,5 +28,21 @@ public class UsersList {
 	public void deleteUser(String login) {
         this.onlineUsers.remove(login);
     }
+	 public String[] getUsers() {
+	        return this.onlineUsers.keySet().toArray(new String[0]);
+	    }
+
+	    public ArrayList<clientServer> getClientsList() {
+	        ArrayList<clientServer> clientsList = new ArrayList<clientServer>(this.onlineUsers.entrySet().size());
+
+	        String s = "";
+	        for(Entry<String, clientServer> m : this.onlineUsers.entrySet()){
+	            clientsList.add(m.getValue());
+	            System.out.println(m.getKey());
+	            s = s + m.getKey();
+	        }
+
+	        return clientsList;
+	    }
 
 }

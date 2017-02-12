@@ -6,6 +6,7 @@ import java.net.Socket;
 
 public class Server {
 	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	public static UsersList list = new UsersList();
 	public static void main(String[] args) {
 		int port;
 		ServerSocket servSocket = null;
@@ -22,6 +23,7 @@ public class Server {
 			e.printStackTrace();
 		}
 		while(true){
+			int nickname = 0;
 			Socket client = null;
 			while(client == null){
 				try{
@@ -32,11 +34,15 @@ public class Server {
 					e.printStackTrace();
 				}
 			}
-			new ClientThread(client);
+			new ClientThread("" + nickname, client);
+			nickname++;
 		}
 
 
 
+	}
+	public static UsersList getUserList() {
+		return list;
 	}
 
 }
